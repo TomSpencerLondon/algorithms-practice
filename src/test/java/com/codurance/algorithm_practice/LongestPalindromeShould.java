@@ -10,12 +10,11 @@ class LongestPalindromeShould {
 
     @ParameterizedTest
     @CsvSource(value = {
-            "'abccaccx'; 3;8",
+            "'abccaccx'; 'ccacc'",
+            "'gxyyadnhndayyin'; 'yyadnhndayy'"
     }, delimiter = ';')
-    void return_begin_and_end_of_longest_palindrome(String input, int start, int end) {
+    void return_begin_and_end_of_longest_palindrome(String input, String output) {
         LongestPalindrome longestPalindrome = new LongestPalindrome();
-        longestPalindrome.findRange(input);
-        assertEquals(start, longestPalindrome.start);
-        assertEquals(end, longestPalindrome.end);
+        assertEquals(output, longestPalindrome.find(input));
     }
 }
