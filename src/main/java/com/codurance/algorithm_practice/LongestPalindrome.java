@@ -20,9 +20,9 @@ public class LongestPalindrome {
             if(input.charAt(leftIndex) != input.charAt(rightIndex)){
                 break;
             }
-            leftIndex++;
+            leftIndex--;
             rightIndex++;
         }
-        return new int[]{ leftIndex, rightIndex};
+        return new int[]{ leftIndex + 1, rightIndex};
     }
 }
