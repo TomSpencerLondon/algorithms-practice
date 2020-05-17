@@ -1,9 +1,6 @@
 package com.codurance.algorithm_practice;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 import static java.util.Arrays.asList;
 
@@ -15,21 +12,25 @@ public class AnagramGroup {
 
     public String[][] group(String[] input) {
         List<List<String>> result = new ArrayList<>();
-        for (int i = 0; i < input.length; i++) {
-            List<String> anagrams = new ArrayList<>();
-            anagrams.add(input[i]);
+        Map<String, List<String>> anagramMap = new HashMap<>();
+        List<String> sorted = new ArrayList<>();
+        for (String word : input) {
+            sorted.add(sortAlphabetically(word));
+        }
 
-            for (int j = i + 1; j < input.length; j++) {
-                if (areAnagrams(input[i], input[j])) {
-                    anagrams.add(input[j]);
-                    input[j] = "";
-                }
+        for (String word : sorted) {
+            if (anagramMap.containsKey(word)){
+                anagramMap.get(word).add(input[sorted.indexOf(word)]);
+            }else{
+                anagramMap.put(word, asList(input[sorted.indexOf(word)]));
             }
-            result.add(anagrams);
+        }
+
+        for(String key : anagramMap.keySet()){
+            result.add(anagramMap.get(key));
         }
 
         return result.stream()
-                .filter(l -> !l.contains(""))
                 .sorted(Comparator.comparingInt(List::size))
                 .map(l -> l.toArray(String[]::new))
                 .toArray(String[][]::new);
