@@ -22,7 +22,7 @@ public class AnagramGroup {
             if (anagramMap.containsKey(word)){
                 anagramMap.get(word).add(input[sorted.indexOf(word)]);
             }else{
-                anagramMap.put(word, asList(input[sorted.indexOf(word)]));
+                anagramMap.put(word, new ArrayList<>(Arrays.asList(input[sorted.indexOf(word)])));
             }
         }
 
