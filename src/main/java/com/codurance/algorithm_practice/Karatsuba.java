@@ -18,9 +18,9 @@ public class Karatsuba {
 
       int mult1 = calculate(x1, y1);
       int mult2 = calculate(x2, y2);
-      int combined = calculate(x1 + x2, y1 + y2) - mult1 - mult2;
+      int mult3 = calculate(x1 + x2, y1 + y2) - mult1 - mult2;
 
-      return (int) ((mult1 * pow(10, l)) + (combined * pow(10, l/2)) + mult2);
+      return (int) ((mult1 * pow(10, l)) + ((mult3) * pow(10, l/2)) + mult2);
     }
   }
 
