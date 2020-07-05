@@ -1,5 +1,7 @@
 package com.codurance.algorithm_practice;
 
+import static java.lang.Math.*;
+
 public class Karatsuba {
 
   public static int calculate(int input1, int input2) {
@@ -19,14 +21,14 @@ public class Karatsuba {
       int mult3 = calculate(x1, y2);
       int mult4 = calculate(x2, y1);
 
-      return (int) ((mult1 * Math.pow(10, l)) + ((mult3 + mult4) * Math.pow(10, l/2)) + mult2);
+      return (int) ((mult1 * pow(10, l)) + ((mult3 + mult4) * pow(10, l/2)) + mult2);
     }
   }
 
   private static int[] split(int num) {
     int l = length(num);
-    int half_two = (int) (num % Math.pow(10, l/2));
-    int half_one = (int) ((num - half_two)/ Math.pow(10, l/2));
+    int half_two = (int) (num % pow(10, l/2));
+    int half_one = (int) ((num - half_two)/ pow(10, l/2));
     return new int[]{half_one, half_two};
   }
 
