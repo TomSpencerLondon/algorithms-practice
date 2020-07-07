@@ -15,7 +15,7 @@ public class Karatsuba {
       int[] yArray = split(input2);
       int y1 = yArray[0];
       int y2 = yArray[1];
-
+      System.out.println("The number: " + input1 + " is split in these numbers: " + x1 + " " + x2);
       int mult1 = calculate(x1, y1);
       int mult2 = calculate(x2, y2);
       int mult3 = calculate(x1 + x2, y1 + y2) - mult1 - mult2;
