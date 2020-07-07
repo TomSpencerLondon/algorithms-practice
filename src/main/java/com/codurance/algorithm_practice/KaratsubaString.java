@@ -21,16 +21,17 @@ public class KaratsubaString {
     }
 
     String a = input1.substring(0, split);
-    String b = input1.substring(input1.length() - split);
+    String b = input1.substring(split);
     String c = input2.substring(0, split);
-    String d = input2.substring(input2.length() - split);
+    String d = input2.substring(split);
+    System.out.println("this is split: " + split);
+    System.out.println("The number: " + input1 + " is split in these numbers: " + a + " " + b);
     int mult1 = calculate(a, c);
     int mult2 = calculate(b, d);
     int mult3 = calculate(Integer.toString(Integer.parseInt(a) + Integer.parseInt(b)),
         Integer.toString(Integer.parseInt(c) + Integer.parseInt(d))) - mult1  - mult2;
 
-    return (int) ((int) (pow(10, makeEven(input1.length())) * mult1) + (pow(10, correctSplit(split, input1)) * (mult3 + mult2)));
-
+    return (int) ((int) (pow(10, makeEven(input1.length())) * mult1) + (pow(10, correctSplit(split, input1)) * mult3 + mult2));
   }
 
   private static int correctSplit(int split, String input1) {
