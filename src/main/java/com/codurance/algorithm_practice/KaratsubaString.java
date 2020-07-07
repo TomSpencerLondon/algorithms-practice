@@ -27,7 +27,7 @@ public class KaratsubaString {
     int mult1 = calculate(a, c);
     int mult2 = calculate(b, d);
     int mult3 = calculate(Integer.toString(Integer.parseInt(a) + Integer.parseInt(b)),
-        Integer.toString(Integer.parseInt(c) + Integer.parseInt(d)));
+        Integer.toString(Integer.parseInt(c) + Integer.parseInt(d))) - mult1  - mult2;
 
     return (int) ((int) (pow(10, makeEven(input1.length())) * mult1) + (pow(10, correctSplit(split, input1)) * (mult3 + mult2)));
 
