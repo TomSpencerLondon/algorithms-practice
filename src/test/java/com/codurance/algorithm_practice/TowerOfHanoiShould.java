@@ -2,8 +2,8 @@ package com.codurance.algorithm_practice;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import com.codurance.algorithm_practice.towerofhanoi.TowerOfHanoi;
 import java.util.Arrays;
-import java.util.Stack;
 import org.junit.jupiter.api.Test;
 
 public class TowerOfHanoiShould {
