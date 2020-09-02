@@ -5,11 +5,10 @@ import java.util.Stack;
 
 
 public class TowerOfHanoi {
-
-  public static Stack<Integer> towerA = new Stack<>();
-  public static Stack<Integer> towerB = new Stack<>();
-  public static Stack<Integer> towerC = new Stack<>();
-  private static int number;
+  public final Stack<Integer> towerA = new Stack<>();
+  public final Stack<Integer> towerB = new Stack<>();
+  public final Stack<Integer> towerC = new Stack<>();
+  private final int number;
 
   public TowerOfHanoi(Integer number) {
     this.number = number;

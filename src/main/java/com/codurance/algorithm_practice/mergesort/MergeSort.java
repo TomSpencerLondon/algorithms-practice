@@ -7,7 +7,7 @@ public class MergeSort {
     if(array.length == 1) {
       return array;
     }else {
-      int middle = array.length / 2;
+      int middle = (int) Math.ceil(((float) array.length)/ 2);
       int[] leftArray = sort(Arrays.copyOfRange(array, 0, middle));
       int[] rightArray = sort(Arrays.copyOfRange(array, middle, array.length));
       return merge(leftArray, rightArray);
